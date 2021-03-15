@@ -1,6 +1,6 @@
 package com.hanjie.opt.example.service;
 
-import kim.hanjie.easy.opt.OptLog;
+import kim.hanjie.common.opt.OptLog;
 import org.springframework.stereotype.Service;
 
 /**
@@ -42,6 +42,12 @@ public class UserService {
         return Result.ofFail("错啦");
     }
 
+    @OptLog(success = "'设置' + #user.id + '密码为' + #user.password",
+            operator = "#adminId")
+    public Result<Boolean> updatePasswordFail2(Long adminId, UserDO user) {
+        return Result.ofFail("错啦");
+    }
+
     @OptLog(success = "'设置' + #user.id + '密码为' + #user.password + ' updatePasswordException(Long adminUserId, UserDO user)'",
             operator = "#adminUserId",
             fail = "'设置失败：' + #_retObj.message + #_errorMsg",
@@ -54,11 +60,11 @@ public class UserService {
         return Result.ofFail("错啦");
     }
 
-    @OptLog(success = "'设置' + #user?.id + '密码为' + #user?.password + ' updatePasswordBizException(Long adminUserId, UserDO user)'",
+    @OptLog(success = "'设置' + #user.id + '密码为' + #user.password + ' updatePasswordBizException(Long adminUserId, UserDO user)'",
             operator = "#adminUserId",
             fail = "'设置失败：' + #_errorMsg",
             exception = "'设置出异常了：' + #_errorMsg",
-            bizId = "#{user?.id}")
+            bizId = "#{user.id}")
     public Result<Boolean> updatePasswordBizException(Long adminUserId, UserDO user) {
         if (user == null) {
             throw new BizException("user 对象为空");
@@ -67,6 +73,22 @@ public class UserService {
     }
 
     public Result<Long> editUserSuccess(UserDO user) {
+        return Result.ofSuccess(1L);
+    }
+
+    @OptLog(success = "#user.id == null ? '新增' : '编辑'",
+            fail = "'设置失败：' + #_errorMsg",
+            bizId = "#user.id == null ? #_retObj.data : #user.id",
+            level = 5)
+    public Result<Long> editUserLevel5(UserDO user) {
+        return Result.ofSuccess(1L);
+    }
+
+    @OptLog(success = "'编辑' + #user.id",
+            fail = "'设置失败：' + #_errorMsg",
+            bizId = "#{user.id}",
+            level = 10)
+    public Result<Long> editUserLevel10(UserDO user) {
         return Result.ofSuccess(1L);
     }
 }

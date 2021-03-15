@@ -30,9 +30,12 @@ public class AdminCtrl {
     @PostMapping("/setPassword")
     public Response setPassword(@RequestBody UserDO user) {
         userService.updatePasswordSuccess(user.getId(), user.getPassword());
-//        userService.updatePasswordSuccess(user);
-//        userService.updatePasswordFail(user);
-//        userService.updatePasswordFail(300L, user);
+        userService.updatePasswordSuccess(user);
+        userService.updatePasswordFail(user);
+        userService.updatePasswordFail(300L, user);
+        userService.editUserLevel5(user);
+        userService.editUserLevel5(new UserDO());
+        userService.editUserLevel10(user);
 //        userService.updatePasswordBizException(null, null);
 //        userService.updatePasswordException(null, null);
         return Response.success();

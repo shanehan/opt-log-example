@@ -1,7 +1,7 @@
 package com.hanjie.opt.example.opt;
 
-import kim.hanjie.easy.opt.IOptLogRecorder;
-import kim.hanjie.easy.opt.OptLogRecord;
+import kim.hanjie.common.opt.IOptLogRecorder;
+import kim.hanjie.common.opt.OptLogRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

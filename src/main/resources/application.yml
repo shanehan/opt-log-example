@@ -2,4 +2,7 @@ spring:
   application:
     name: opt-example
 
-
+kim:
+  common:
+    opt:
+      ignoreLevel: 5

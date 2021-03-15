@@ -36,14 +36,9 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.aspectj</groupId>-->
-<!--            <artifactId>aspectjweaver</artifactId>-->
-<!--            <version>1.9.5</version>-->
-<!--        </dependency>-->
 
         <dependency>
-            <groupId>kim.hanjie.easy</groupId>
+            <groupId>kim.hanjie.common</groupId>
             <artifactId>opt-log</artifactId>
             <version>0.1.0</version>
         </dependency>

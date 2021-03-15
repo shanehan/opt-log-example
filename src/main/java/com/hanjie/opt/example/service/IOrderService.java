@@ -1,6 +1,7 @@
 package com.hanjie.opt.example.service;
 
-import kim.hanjie.easy.opt.OptLog;
+
+import kim.hanjie.common.opt.OptLog;
 
 /**
  * @author han

@@ -2,8 +2,8 @@ package com.hanjie.opt.example.opt;
 
 import com.hanjie.opt.example.service.BizException;
 import com.hanjie.opt.example.service.Result;
-import kim.hanjie.easy.opt.OptStatus;
-import kim.hanjie.easy.opt.OptStatusPolicy;
+import kim.hanjie.common.opt.OptStatus;
+import kim.hanjie.common.opt.OptStatusPolicy;
 
 import java.lang.reflect.Method;
 

@@ -1,7 +1,7 @@
 package com.hanjie.opt;
 
 import com.hanjie.opt.example.opt.CommonOptStatusPolicy;
-import kim.hanjie.easy.opt.IOptStatusPolicy;
+import kim.hanjie.common.opt.IOptStatusPolicy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

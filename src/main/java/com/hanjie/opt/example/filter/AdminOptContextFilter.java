@@ -1,7 +1,8 @@
 package com.hanjie.opt.example.filter;
 
 
-import kim.hanjie.easy.opt.OptContext;
+
+import kim.hanjie.common.opt.OptContext;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
