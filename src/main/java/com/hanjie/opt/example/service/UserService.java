@@ -3,6 +3,8 @@ package com.hanjie.opt.example.service;
 import kim.hanjie.common.opt.OptLog;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author han
  * @date 2021/3/11
@@ -90,5 +92,11 @@ public class UserService {
             level = 10)
     public Result<Long> editUserLevel10(UserDO user) {
         return Result.ofSuccess(1L);
+    }
+
+
+    @OptLog(success = "'编辑用户: ' + #users.![id]", bizId = "#users.![id]")
+    public Result editUsers(List<UserDO> users) {
+        return Result.ofSuccess();
     }
 }

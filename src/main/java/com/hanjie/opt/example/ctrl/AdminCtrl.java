@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author han
  * @date 2021/3/11
@@ -44,6 +47,20 @@ public class AdminCtrl {
     @PostMapping("/setOrder")
     public Response setOrder(@RequestBody OrderDO orderDO) {
         orderService.updateOrderDetail(orderDO.getOrderId(), orderDO.getDetail());
+        return Response.success();
+    }
+
+
+    @PostMapping("/editUsers")
+    public Response editUsers() {
+        UserDO tesla = new UserDO(100L, "tesla");
+        UserDO hui = new UserDO(101L, "hui");
+        UserDO mali = new UserDO(102L, "mali");
+        List<UserDO> list = new ArrayList<>();
+        list.add(tesla);
+        list.add(hui);
+        list.add(mali);
+        userService.editUsers(list);
         return Response.success();
     }
 }
