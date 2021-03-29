@@ -40,7 +40,7 @@
         <dependency>
             <groupId>kim.hanjie.common</groupId>
             <artifactId>opt-log</artifactId>
-            <version>0.1.1</version>
+            <version>0.1.4</version>
         </dependency>
 
         <dependency>
